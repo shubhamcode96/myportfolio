@@ -3,15 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Digital Business Card</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .business-card {
+            width: 100%;
+            max-width: 400px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .name {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .company {
+            font-size: 14px;
+            font-weight: 300;
+            display: inline-block;
+            padding: 5px 15px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+        }
+        
+        .card-body {
+            padding: 30px;
+        }
+        
+        .contact-info {
+            margin-bottom: 25px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .info-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .info-text {
+            flex-grow: 1;
+        }
+        
+        .info-label {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 2px;
+        }
+        
+        .info-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+            word-break: break-all;
+        }
+        
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .btn {
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid #667eea;
+            color: #667eea;
+        }
+        
+        .btn-outline:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+        
+        .btn i {
+            margin-right: 8px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #667eea;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+    </style>
 </head>
 <body>
-
-    <div id="content">
+    <div class="business-card">
+        <div class="card-header">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile" class="profile-img">
+            <h1 class="name">John Doe</h1>
+            <p class="title">Digital Marketing Specialist</p>
+            <span class="company">Tech Solutions Inc.</span>
+        </div>
         
+        <div class="card-body">
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div class="info-text">
+                        <div class="info-label">Phone</div>
+                        <div class="info-value">+1 (555) 123-4567</div>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <div class="info-text">
+                        <div class="info-label">WhatsApp</div>
+                        <div class="info-value">+1 (555) 123-4567</div>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="info-text">
+                        <div class="info-label">Email</div>
+                        <div class="info-value">john.doe@example.com</div>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div class="info-text">
+                        <div class="info-label">Website</div>
+                        <div class="info-value">www.johndoeportfolio.com</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="downloadVCard()">
+                    <i class="fas fa-download"></i> Download vCard
+                </button>
+                
+                <a href="https://wa.me/15551234567" class="btn btn-outline" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Message on WhatsApp
+                </a>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </div>
     </div>
 
-    <script src="https://unpkg.com/rxjs@^7/dist/bundles/rxjs.umd.min.js"></script>
-    <script src="index.js"></script>
+    <script>
+        function downloadVCard() {
+            // This would be replaced with actual vCard generation code
+            alert("vCard download functionality would be implemented here");
+            
+            // Example of actual implementation would be:
+            // const vCard = `BEGIN:VCARD
+            // VERSION:3.0
+            // FN:John Doe
+            // ORG:Tech Solutions Inc.
+            // TITLE:Digital Marketing Specialist
+            // TEL;TYPE=work,voice:+1 (555) 123-4567
+            // EMAIL;TYPE=work:john.doe@example.com
+            // URL:www.johndoeportfolio.com
+            // END:VCARD`;
+            //
+            // const blob = new Blob([vCard], { type: 'text/vcard' });
+            // const url = URL.createObjectURL(blob);
+            //
+            // const link = document.createElement('a');
+            // link.href = url;
+            // link.download = 'john_doe.vcf';
+            // link.click();
+        }
+    </script>
 </body>
 </html>
